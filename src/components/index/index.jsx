@@ -69,6 +69,69 @@ const cardsData = [
     },
 ];
 
+const cardsAnswers = [
+    {
+        id: "cache",
+        concept: "",
+        definition:
+            "Cache",
+    },
+    {
+        id: "hierarchy",
+        concept: "",
+        definition:
+            "Hierarquia de memória",
+    },
+    {
+        id: "internal",
+        concept: "",
+        definition:
+            "Memória interna",
+    },
+    {
+        id: "external",
+        concept: "",
+        definition:
+            "Armazenamento externo",
+    },
+    {
+        id: "registers",
+        concept: "",
+        definition:
+            "Registradores",
+    },
+    {
+        id: "l1cache",
+        concept: "",
+        definition:
+            "Cache Level 1",
+    },
+    {
+        id: "ram",
+        concept: "",
+        definition:
+            "Memória RAM",
+    },
+    {
+        id: "ssd",
+        concept: "",
+        definition:
+            "Armazenamento SSD",
+    },
+    {
+        id: "dram",
+        concept: "",
+        definition:
+            "Memória DRAM",
+    },
+    {
+        id: "bus",
+        concept: "",
+        definition:
+            "Barramento",
+    },
+];
+
 export default function App() {
     const [cards, setCards] = useState([]);
     const [score, setScore] = useState(0);
@@ -105,7 +168,10 @@ export default function App() {
                 selectedCards = shuffled.slice(0, 8); // Default to medium
                 break;
         }
-        const gameCards = shuffleArray([...selectedCards, ...selectedCards]);
+        let selectedAnswers = selectedCards.map((card) => {
+            return cardsAnswers.find((answer) => answer.id === card.id);
+        });
+        const gameCards = shuffleArray([...selectedCards, ...selectedAnswers]);
         setCards(gameCards);
         setScore(0);
         setTimeElapsed(0);
