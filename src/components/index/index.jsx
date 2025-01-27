@@ -7,66 +7,66 @@ import { shuffleArray } from "../../utils/helpers";
 import "./index.css";
 
 const cardsData = [
-  {
-    id: "cache",
-    concept: "",
-    definition:
-      "A small, fast memory area that stores copies of data from frequently used main memory locations.",
-  },
-  {
-    id: "hierarchy",
-    concept: "",
-    definition:
-      "Organizes memory components based on their access and response times, from registers down to tertiary storage.",
-  },
-  {
-    id: "internal",
-    concept: "",
-    definition:
-      "Memory directly accessible by the processor, such as main memory (RAM) and cache.",
-  },
-  {
-    id: "external",
-    concept: "",
-    definition:
-      "Peripheral storage, including HDD, SSD, optical disks, slower and larger but not directly accessed by the CPU.",
-  },
-  {
-    id: "registers",
-    concept: "",
-    definition:
-      "Small, fastest memory locations directly inside the CPU to hold temporary data and instructions.",
-  },
-  {
-    id: "l1cache",
-    concept: "",
-    definition:
-      "The smallest and fastest cache level, typically on the CPU chip.",
-  },
-  {
-    id: "ram",
-    concept: "",
-    definition:
-      "Primary storage that holds data and instructions currently used by the CPU; slower but larger than cache.",
-  },
-  {
-    id: "ssd",
-    concept: "",
-    definition:
-      "Secondary storage device with faster access times than HDDs, but slower than RAM.",
-  },
-  {
-    id: "dram",
-    concept: "",
-    definition:
-      "Dynamic RAM, commonly used for main memory; less expensive but slower compared to SRAM.",
-  },
-  {
-    id: "bus",
-    concept: "",
-    definition:
-      "Transfers data between CPU, main memory, and peripheral devices.",
-  },
+    {
+        id: "cache",
+        concept: "Cache",
+        definition:
+            "Uma pequena, porém rápida área de memória que armazena cópias de dados de locais de memória principal frequentemente utilizados.",
+    },
+    {
+        id: "hierarchy",
+        concept: "Hierarquia de Memória",
+        definition:
+            "Organiza componentes de memória com base em seus tempos de acesso e resposta, desde registradores até armazenamento terciário.",
+    },
+    {
+        id: "internal",
+        concept: "Memória Interna",
+        definition:
+            "Memória diretamente acessível pelo processador, como a memória principal (RAM) e a cache.",
+    },
+    {
+        id: "external",
+        concept: "Memória Externa",
+        definition:
+            "Armazenamento periférico, incluindo HDD, SSD, discos ópticos, mais lento e maior, mas não acessado diretamente pela CPU.",
+    },
+    {
+        id: "registers",
+        concept: "Registradores",
+        definition:
+            "Locais de memória pequenos e mais rápidos diretamente dentro da CPU para armazenar dados e instruções temporárias.",
+    },
+    {
+        id: "l1cache",
+        concept: "Cache L1",
+        definition:
+            "O menor e mais rápido nível de cache, normalmente no chip da CPU.",
+    },
+    {
+        id: "ram",
+        concept: "Memória RAM",
+        definition:
+            "Armazenamento primário que contém dados e instruções atualmente usados pela CPU; mais lento, mas maior que o cache.",
+    },
+    {
+        id: "ssd",
+        concept: "SSD",
+        definition:
+            "Dispositivo de armazenamento secundário com tempos de acesso mais rápidos do que HDDs, mas mais lento do que RAM.",
+    },
+    {
+        id: "dram",
+        concept: "DRAM",
+        definition:
+            "RAM dinâmica, comumente usada para memória principal; menos caro, mas mais lento em comparação com a SRAM.",
+    },
+    {
+        id: "bus",
+        concept: "Barramento (Bus)",
+        definition:
+            "Transfere dados entre CPU, memória principal e dispositivos periféricos.",
+    },
 ];
 
 export default function App() {
