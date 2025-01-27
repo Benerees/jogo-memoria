@@ -1,9 +1,20 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Card from "../Card/Card";
 
-export default function GameBoard({ cards, onCardMatch, isStudyMode }) {
+export default function GameBoard({
+  cards,
+  onCardMatch,
+  isStudyMode,
+  isGameOver,
+}) {
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
+  useEffect(() => {
+    if (isGameOver) {
+      setFlippedCards([]);
+      setMatchedCards([]);
+    }
+  }, [isGameOver]);
 
   const gridSize = useMemo(() => {
     const size = Math.sqrt(cards.length);
@@ -44,7 +55,7 @@ export default function GameBoard({ cards, onCardMatch, isStudyMode }) {
   };
 
   return (
-    <div className={`grid gap-4 p-4 ${gridSize}`}>
+    <div className={`container grid-4x4 ${gridSize}`}>
       {cards.map((card, index) => (
         <Card
           key={index}

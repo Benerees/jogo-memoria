@@ -1,8 +1,10 @@
+import "./card.css";
+
 export default function Card({ card, isFlipped, onClick }) {
   return (
     <div
-      className={`relative aspect-square cursor-pointer ${
-        isFlipped ? "bg-blue-200" : "bg-gray-300"
+      className={`block relative aspect-square cursor-pointer ${
+        isFlipped ? "block-flipped bg-blue-200" : "bg-gray-300"
       }`}
       onClick={onClick}
     >
@@ -12,11 +14,11 @@ export default function Card({ card, isFlipped, onClick }) {
         }`}
       >
         {isFlipped ? (
-          <p className="text-xs sm:text-sm md:text-base text-center">
+          <p className="flip text-xs sm:text-sm md:text-base text-center">
             {card.definition}
           </p>
         ) : (
-          <p className="text-sm sm:text-base md:text-lg font-bold">
+          <p className="flip text-sm sm:text-base md:text-lg font-bold">
             {card.concept}
           </p>
         )}

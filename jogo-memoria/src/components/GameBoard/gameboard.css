@@ -1,0 +1,10 @@
+.grid-4x4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.container {
+  display: grid;
+  gap: 16px; /* Espaçamento entre blocos */
+  width: 80%; /* Ajusta a largura do container */
+  margin: 0 auto;
+}

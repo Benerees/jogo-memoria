@@ -1,3 +1,5 @@
+import "./header.css";
+
 export default function Header({
   isStudyMode,
   toggleStudyMode,
@@ -16,16 +18,15 @@ export default function Header({
           }`}
           onClick={toggleStudyMode}
         >
-          {isStudyMode ? "Exit Study Mode" : "Enter Study Mode"}
+          {isStudyMode ? "Exit Study Mode" : "Enter Study Mode:"}
         </button>
         <select
-          className="bg-blue-700 px-4 py-2 rounded"
+          className="bg-blue-700 px-4 py-2 rounded select"
           value={difficulty}
           onChange={(e) => changeDifficulty(e.target.value)}
         >
           <option value="easy">Easy (4x4)</option>
           <option value="medium">Medium (6x6)</option>
-          <option value="hard">Hard (8x8)</option>
         </select>
       </div>
     </header>

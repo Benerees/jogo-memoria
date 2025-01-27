@@ -1,0 +1,36 @@
+.block {
+  background-image: url("../../wkjrwgpd.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 260px;
+  width: 180px;
+  border-radius: 8px;
+  font-size: 6px;
+  padding: 30px;
+  font-family: "Press Start 2P", sans-serif;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: 0.6s;
+}
+.flip {
+  transform: rotateY(180deg);
+}
+
+.block-flipped {
+  background-image: url("../../cnwzoxke.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 12px;
+  transform: rotateY(180deg);
+}

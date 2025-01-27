@@ -4,65 +4,66 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import ResultModal from "../ResultModal/ResultModal";
 import { shuffleArray } from "../../utils/helpers";
+import "./index.css";
 
 const cardsData = [
   {
     id: "cache",
-    concept: "Cache Memory",
+    concept: "",
     definition:
       "A small, fast memory area that stores copies of data from frequently used main memory locations.",
   },
   {
     id: "hierarchy",
-    concept: "Memory Hierarchy",
+    concept: "",
     definition:
       "Organizes memory components based on their access and response times, from registers down to tertiary storage.",
   },
   {
     id: "internal",
-    concept: "Internal Memory",
+    concept: "",
     definition:
       "Memory directly accessible by the processor, such as main memory (RAM) and cache.",
   },
   {
     id: "external",
-    concept: "External Memory",
+    concept: "",
     definition:
       "Peripheral storage, including HDD, SSD, optical disks, slower and larger but not directly accessed by the CPU.",
   },
   {
     id: "registers",
-    concept: "CPU Registers",
+    concept: "",
     definition:
       "Small, fastest memory locations directly inside the CPU to hold temporary data and instructions.",
   },
   {
     id: "l1cache",
-    concept: "L1 Cache",
+    concept: "",
     definition:
       "The smallest and fastest cache level, typically on the CPU chip.",
   },
   {
     id: "ram",
-    concept: "Main Memory (RAM)",
+    concept: "",
     definition:
       "Primary storage that holds data and instructions currently used by the CPU; slower but larger than cache.",
   },
   {
     id: "ssd",
-    concept: "Solid-State Drive (SSD)",
+    concept: "",
     definition:
       "Secondary storage device with faster access times than HDDs, but slower than RAM.",
   },
   {
     id: "dram",
-    concept: "DRAM",
+    concept: "",
     definition:
       "Dynamic RAM, commonly used for main memory; less expensive but slower compared to SRAM.",
   },
   {
     id: "bus",
-    concept: "System Bus",
+    concept: "",
     definition:
       "Transfers data between CPU, main memory, and peripheral devices.",
   },
@@ -100,11 +101,9 @@ export default function App() {
       case "medium":
         selectedCards = shuffled.slice(0, 18); // 6x6 grid
         break;
-      case "hard":
-        selectedCards = shuffled; // 8x8 grid (all 20 cards)
-        break;
       default:
-        selectedCards = shuffled.slice(0, 18); // Default to medium
+        selectedCards = shuffled.slice(0, 8); // Default to medium
+        break;
     }
     const gameCards = shuffleArray([...selectedCards, ...selectedCards]);
     setCards(gameCards);
@@ -133,28 +132,32 @@ export default function App() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="">
       <Header
         isStudyMode={isStudyMode}
         toggleStudyMode={toggleStudyMode}
         difficulty={difficulty}
         changeDifficulty={changeDifficulty}
       />
-      <main className="flex-grow">
+      <main className="container grid-4x4 container-index">
         <GameBoard
           cards={cards}
           onCardMatch={handleCardMatch}
           isStudyMode={isStudyMode}
+          isGameOver={isGameOver}
         />
       </main>
-      <Footer score={score} timeElapsed={timeElapsed} />
-      {isGameOver && (
-        <ResultModal
-          score={score}
-          timeElapsed={timeElapsed}
-          onRestart={initGame}
-        />
-      )}
+      <div className="score">
+        <Footer score={score} timeElapsed={timeElapsed} />
+        {isGameOver && (
+          <ResultModal
+            score={score}
+            timeElapsed={timeElapsed}
+            difficulty={difficulty}
+            onRestart={initGame}
+          />
+        )}
+      </div>
     </div>
   );
 }
