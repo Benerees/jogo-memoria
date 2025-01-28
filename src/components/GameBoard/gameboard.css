@@ -2,9 +2,13 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
+.grid-6x6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
 .container {
   display: grid;
   gap: 16px; /* Espaçamento entre blocos */
-  width: 80%; /* Ajusta a largura do container */
+  width: 80%;
   margin: 0 auto;
 }

@@ -18,8 +18,8 @@ body {
 .container {
   display: grid;
   gap: 16px; /* Espaçamento entre blocos */
-  width: 68%; /* Ajusta a largura do container */
-  margin: 20px auto;
+  width: 100%; /* Ajusta a largura do container */
+  margin: 30px 130px;
 }
 
 .grid-4x4 {
